@@ -8,13 +8,13 @@ typedef struct {
     int* dato;
     size_t tamano;
     size_t tamano_inicial;
-} DynamicArray;
+} arreglod;
 
-DynamicArray* da_create(size_t tamano_inicial);
-void da_append(DynamicArray* arr, int numero);
-void da_remove(DynamicArray* arr, int numero);
-int da_get(DynamicArray* arr, size_t ubicacion);
-void da_free(DynamicArray* arr);
-void da_print(const DynamicArray* arr);
+arreglod* create(size_t tamano_inicial); // función que crea el arreglo
+void append(arreglod* arr, int numero);  // función que agrega un elemento al final del arreglo
+void remove(arreglod* arr, int numero); //función que elimina un elemento del arreglo
+int get(arreglod* arr, size_t ubicacion); //función para obtener elemento por su índice
+void free(arreglod* arr); // función que libera la memoria del puntero
+void print(const arreglod* arr); // función que imprime el arreglo
 
 #endif
