@@ -14,7 +14,7 @@ arreglod* create(size_t tamano_inicial); // función que crea el arreglo
 void append(arreglod* arr, int numero);  // función que agrega un elemento al final del arreglo
 void remove(arreglod* arr, int numero); //función que elimina un elemento del arreglo
 int get(arreglod* arr, size_t ubicacion); //función para obtener elemento por su índice
-void free(arreglod* arr); // función que libera la memoria del puntero
+void free_arreglod(arreglod* arr); // función que libera la memoria del puntero
 void print(const arreglod* arr); // función que imprime el arreglo
 
 #endif
