@@ -42,15 +42,20 @@ void append(arreglod* arr, int numero){
 
 void remove_element(arreglod* arr, int numero) {
     size_t i = 0;
+    int encontrado = 0;
     while (i < arr->tamano) {
         if (arr->datos[i] == numero) {
             for (size_t j = i; j < arr->tamano - 1; j++) {
                 arr->datos[j] = arr->datos[j + 1];
             }
             arr->tamano--;
+            encontrado = 1;
         } else {
             i++;
         }
+    }
+    if (encontrado == 0) {
+        printf("El número %d no se encuentra en el arreglo.\n", numero);
     }
 }
 int get(arreglod* arr, size_t ubicacion) {
