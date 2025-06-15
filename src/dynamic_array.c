@@ -29,7 +29,7 @@ void append(arreglod* arr, int numero){
 		size_t tamano_act = arr->tamano_inicial * 2;
 		int* nuevo_dato = (int*)realloc(arr->datos, tamano_act * sizeof(int));
 		if (nuevo_dato == NULL) {
-		printf("Error al redimensionar el arreglo.\n")
+		printf("Error al redimensionar el arreglo.\n");
 		exit(1);
 		}
 		arr->datos=nuevo_dato;
@@ -40,11 +40,11 @@ void append(arreglod* arr, int numero){
 }
 
 
-void remove(arreglod* arr, int numero) {
-    int i = 0;
+void remove_element(arreglod* arr, int numero) {
+    size_t i = 0;
     while (i < arr->tamano) {
         if (arr->datos[i] == numero) {
-            for (int j = i; j < arr->tamano - 1; j++) {
+            for (size_t j = i; j < arr->tamano - 1; j++) {
                 arr->datos[j] = arr->datos[j + 1];
             }
             arr->tamano--;
@@ -61,15 +61,20 @@ int get(arreglod* arr, size_t ubicacion) {
 	return arr->datos[ubicacion];
 }
 
-void free_arreglod(arreglod* arr){
-	free(arr->datos);
-	arr->datos= NULL;
+void free_arreglod(arreglod* arr) {
+    if (arr != NULL) {               
+        if (arr->datos != NULL) {    
+            free(arr->datos);         
+            arr->datos = NULL;        
+        }
+        free(arr);                   
+    }
 }
 
 void print(const arreglod* arr){
-	for(int i=0; i <arr->tamano; i++){
-		printf("%d ", arr->datos[i]);
-	}
-	printf("\n");
+    for(size_t i = 0; i < arr->tamano; i++){
+        printf("%d ", arr->datos[i]);
+    }
+    printf("\n");
 }
 
