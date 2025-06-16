@@ -60,7 +60,7 @@ void remove_element(arreglod* arr, int numero) {
 }
 int get(arreglod* arr, size_t ubicacion) {
 	if (ubicacion >= arr->tamano){
-		printf("Problema: El índice es mayor al tamaño de la matriz \n");
+		printf("Problema: El índice es mayor al tamaño del arreglo. \n");
 		exit(1);
 	}
 	return arr->datos[ubicacion];
