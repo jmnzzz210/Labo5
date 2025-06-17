@@ -4,15 +4,18 @@ CFLAGS = -Wall -Wextra -Iinclude
 
 TARGET = estructuras_datos
 
-SRCS = main.c src/*.c
-OBJS = $(SRCS:.c=.o)
+SRCS = main.c $(wildcard src/*.c)
+OBJS = main.o src/dynamic_array.o src/stack.o
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-%.o: %.c
+main.o: main.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+src/%.o: src/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
