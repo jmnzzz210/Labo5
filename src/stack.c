@@ -9,7 +9,7 @@ Stack* createStack() {
 }
 
 void push(Stack* s, int data) {
-	Node* newNode = malloc(sizeof(Node));
+	Nodest* newNode = malloc(sizeof(Nodest));
 	newNode->data = data;
 	newNode->next = s->top;
 	s->top = newNode;
@@ -20,7 +20,7 @@ int pop(Stack* s) {
 		printf("Stack underflow\n");
 		return -1;
 	}
-	Node* temp = s->top;
+	Nodest* temp = s->top;
 	int value = temp->data;
 	s->top = temp->next;
 	free(temp);
@@ -37,15 +37,15 @@ int isEmpty(Stack* s) {
 }
 
 void printStack(Stack* s) {
-	for (Node* cur = s->top; cur; cur = cur->next)
+	for (Nodest* cur = s->top; cur; cur = cur->next)
 		printf("%d ", cur->data);
 	printf("\n");
 }
 
 void freeStack(Stack* s) {
-	Node* cur = s->top;
+	Nodest* cur = s->top;
 	while (cur) {
-		Node* temp = cur;
+		Nodest* temp = cur;
 		cur = cur->next;
 		free(temp);
 	}
