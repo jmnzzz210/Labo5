@@ -1,6 +1,6 @@
 CC = gcc
 
-CFLAGS = -Wall -Wextra -IInclude
+CFLAGS = -g -Wall -Wextra -IInclude
 
 TARGET = list_test
 

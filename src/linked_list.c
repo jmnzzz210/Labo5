@@ -18,46 +18,32 @@ int main(void) {
   // Crear print para verificar lista
   //
 
-  Node *current = list_test.head;
   printf("Lista antes de posicion especifica: ");
-  while (current) {
-    printf("%d y ", current->data);
-    current = current->next;
-  }
-  printf("NULO\n");
+  list_print_forward(&list_test);
 
   // Print de busqueda
 
-  Node *buscar;
-  buscar = list_search(&list_test, 3);
-  printf("%s\n", buscar ? "3 encontrado" : "3 no encontrado");
+  printf("%s\n",
+         list_search(&list_test, 3) ? "3 encontrado" : "3 no encontrado");
 
-  buscar = list_search(&list_test, 6);
-  printf("%s\n", buscar ? "7 encontrado" : "7 no encontrado");
+  printf("%s\n",
+         list_search(&list_test, 7) ? "7 encontrado" : "7 no encontrado");
 
   // Print para verificar lista despues de indicar posicion especifica
 
   list_insert_at(&list_test, 6, 6);
 
-  current = list_test.head;
   printf("Lista despues de posicion especifica: ");
-  while (current) {
-    printf("%d y ", current->data);
-    current = current->next;
-  }
-  printf("NULO\n");
+  list_print_forward(&list_test);
 
   // Print para verificar lista despues de eliminar un dato
 
   list_delete_data(&list_test, 4);
 
-  current = list_test.head;
   printf("Lista despues de eliminar 4 :");
-  while (current) {
-    printf("%d y ", current->data);
-    current = current->next;
-  }
-  printf("NULO\n");
+  list_print_forward(&list_test);
+
+  list_destroy(&list_test);
 
   return 0;
 }

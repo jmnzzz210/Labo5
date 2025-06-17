@@ -1,4 +1,5 @@
 #include "linked_list.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 // Funcion para implementar la lista
@@ -113,4 +114,34 @@ int list_delete_data(count *list, int value) {
   free(current);
   list->size--;
   return 1;
+}
+
+// Funcion para imprimir la lista hacia adelante
+
+void list_print_forward(const count *list) {
+  const Node *current = list->head;
+
+  if (current == NULL) {
+    printf("Nulo\n");
+    return;
+  }
+
+  while (current) {
+    printf("%d y ", current->data);
+    current = current->next;
+  }
+  printf("Nulo\n");
+}
+
+// Funcion para liberar memoria
+
+void list_destroy(count *list) {
+  Node *current = list->head;
+  while (current) {
+    Node *next = current->next;
+    free(current);
+    current = next;
+  }
+  list->head = NULL;
+  list->size = 0;
 }

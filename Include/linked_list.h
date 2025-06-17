@@ -47,4 +47,12 @@ count *list_insert_at(count *list, int pos, int value);
 
 int list_delete_data(count *list, int value);
 
+// Funcion para Imprimir la lista hacia adelante (izq a derecha)
+
+void list_print_forward(const count *list);
+
+// Funcion para liberar memoria y dejar lista vacia
+
+void list_destroy(count *list);
+
 #endif
