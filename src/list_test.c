@@ -88,3 +88,29 @@ count *list_insert_at(count *list, int pos, int value) {
   list->size++;
   return list;
 }
+
+// Funcion para eliminar un elemento basado en data
+int list_delete_data(count *list, int value) {
+  Node *current = list->head;
+  Node *prev = NULL;
+
+  while (current && current->data != value) {
+    prev = current;
+    current = current->next;
+  }
+
+  if (current == NULL) {
+    return 0;
+  }
+
+  // Si se desea eliminar la cabeza
+
+  if (prev == NULL)
+    list->head = current->next;
+  else
+    prev->next = current->next;
+
+  free(current);
+  list->size--;
+  return 1;
+}

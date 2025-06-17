@@ -47,5 +47,17 @@ int main(void) {
   }
   printf("NULO\n");
 
+  // Print para verificar lista despues de eliminar un dato
+
+  list_delete_data(&list_test, 4);
+
+  current = list_test.head;
+  printf("Lista despues de eliminar 4 :");
+  while (current) {
+    printf("%d y ", current->data);
+    current = current->next;
+  }
+  printf("NULO\n");
+
   return 0;
 }

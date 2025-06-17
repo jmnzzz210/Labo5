@@ -43,4 +43,8 @@ void list_insert_back(count *list, int value);
 
 count *list_insert_at(count *list, int pos, int value);
 
+// Funcion para borrar un elemento basado en data
+
+int list_delete_data(count *list, int value);
+
 #endif
