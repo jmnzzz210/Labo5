@@ -1,9 +1,10 @@
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Iinclude
 
-TARGET = arreglos_dinamicos
+TARGET = estructuras_datos
 
-SRCS = main.c src/dynamic_array.c
+SRCS = main.c src/*.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(TARGET)
@@ -16,6 +17,3 @@ $(TARGET): $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(TARGET)
-
-
-
