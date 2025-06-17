@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Iinclude
 TARGET = estructuras_datos
 
 SRCS = main.c $(wildcard src/*.c)
-OBJS = main.o src/dynamic_array.o src/stack.o
+OBJS = main.o src/dynamic_array.o src/stack.o src/list_test.o
 
 all: $(TARGET)
 
