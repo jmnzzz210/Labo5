@@ -1,13 +1,13 @@
 #ifndef STACK_H
 #define STACK_H
 
-typedef struct Node {
+typedef struct Nodest {
 	int data;
-	struct Node* next;
-} Node;
+	struct Nodest* next;
+} Nodest;
 
 typedef struct {
-	Node* top;
+	Nodest* top;
 } Stack;
 
 Stack* createStack();
