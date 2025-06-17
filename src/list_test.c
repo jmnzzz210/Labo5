@@ -20,3 +20,15 @@ void list_insert_front(count *list, int value) {
   list->head = new;
   list->size++;
 }
+
+// Funcion para buscar un valor de la lista
+
+Node *list_search(count *list, int value) {
+  Node *current = list->head;
+  while (current) {
+    if (current->data == value)
+      return current;
+    current = current->next;
+  }
+  return NULL;
+}

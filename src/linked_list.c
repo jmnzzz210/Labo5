@@ -9,9 +9,9 @@ int main(void) {
   count list_test;
   list_create(&list_test);
 
+  list_insert_front(&list_test, 3);
   list_insert_front(&list_test, 2);
   list_insert_front(&list_test, 1);
-
   // Crear print para verificar lista
   //
 
@@ -21,6 +21,13 @@ int main(void) {
     current = current->next;
   }
   printf("NULO\n");
+
+  Node *buscar;
+  buscar = list_search(&list_test, 3);
+  printf("%s\n", buscar ? "3 encontrado" : "3 no encontrado");
+
+  buscar = list_search(&list_test, 4);
+  printf("%s\n", buscar ? "4 encontrado" : "4 no encontrado");
 
   return 0;
 }

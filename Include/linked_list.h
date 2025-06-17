@@ -24,12 +24,15 @@ typedef struct list_count {
 /* Prototipos de Funcion*/
 
 // Funcion para crear la lista
-//
 
 void list_create(count *list);
 
 // Funcion para introducir un valor al inicio
 
 void list_insert_front(count *list, int value);
+
+// Funcion para buscar un valor en la lista
+
+Node *list_search(count *list, int value);
 
 #endif
