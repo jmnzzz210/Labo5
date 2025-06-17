@@ -9,6 +9,7 @@ void list_create(count *list) {
   list->size = 0;
 }
 
+// Funcion para introducir un valor al principio de la lista
 void list_insert_front(count *list, int value) {
   Node *new = malloc(sizeof(Node));
   if (!new) {
@@ -31,4 +32,22 @@ Node *list_search(count *list, int value) {
     current = current->next;
   }
   return NULL;
+}
+
+// Funcion para introducir un valor al final de la lista
+
+void list_insert_back(count *list, int value) {
+  Node *new = malloc(sizeof(Node));
+  if (!new)
+    return;
+
+  new->data = value;
+  new->next = NULL;
+
+  Node *current = list->head;
+  while (current->next)
+    current = current->next;
+
+  current->next = new;
+  list->size++;
 }

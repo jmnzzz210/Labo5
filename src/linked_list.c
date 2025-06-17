@@ -12,6 +12,8 @@ int main(void) {
   list_insert_front(&list_test, 3);
   list_insert_front(&list_test, 2);
   list_insert_front(&list_test, 1);
+  list_insert_back(&list_test, 4);
+  list_insert_back(&list_test, 5);
   // Crear print para verificar lista
   //
 
@@ -26,8 +28,8 @@ int main(void) {
   buscar = list_search(&list_test, 3);
   printf("%s\n", buscar ? "3 encontrado" : "3 no encontrado");
 
-  buscar = list_search(&list_test, 4);
-  printf("%s\n", buscar ? "4 encontrado" : "4 no encontrado");
+  buscar = list_search(&list_test, 6);
+  printf("%s\n", buscar ? "6 encontrado" : "6 no encontrado");
 
   return 0;
 }

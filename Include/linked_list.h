@@ -35,4 +35,8 @@ void list_insert_front(count *list, int value);
 
 Node *list_search(count *list, int value);
 
+// Funcion para introducr un valor al final de la lista
+
+void list_insert_back(count *list, int value);
+
 #endif
