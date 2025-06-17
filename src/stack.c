@@ -42,3 +42,12 @@ void printStack(Stack* s) {
 	printf("\n");
 }
 
+void freeStack(Stack* s) {
+	Node* cur = s->top;
+	while (cur) {
+		Node* temp = cur;
+		cur = cur->next;
+		free(temp);
+	}
+	free(s);
+}
