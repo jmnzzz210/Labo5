@@ -51,3 +51,40 @@ void list_insert_back(count *list, int value) {
   current->next = new;
   list->size++;
 }
+
+// Funcion para introducir un valor en una posicion especifica
+
+count *list_insert_at(count *list, int pos, int value) {
+  if (pos < 1)
+    return list;
+
+  if (pos == 1) {
+    Node *new = malloc(sizeof(Node));
+    if (!new) {
+      return list;
+    }
+    new->data = value;
+    new->next = list->head;
+    list->head = new;
+    list->size++;
+    return list;
+  }
+
+  Node *current = list->head;
+  for (int i = 1; i < pos - 1 && current != NULL; ++i)
+    current = current->next;
+
+  if (current == NULL)
+    return list;
+
+  Node *new = malloc(sizeof(Node));
+  if (!new) {
+    return list;
+  }
+
+  new->data = value;
+  new->next = current->next;
+  current->next = new;
+  list->size++;
+  return list;
+}
